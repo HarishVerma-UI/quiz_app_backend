@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 
 const questionsSchema = new Schema({
   category: String,
-  questions: String,
+  question: String,
 });
 
 const Questions = model('questions', questionsSchema);
