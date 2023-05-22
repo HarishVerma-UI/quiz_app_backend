@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const URI = process.env.MONGO_URI;
-
+const PORT = process.env.PORT | 3000;
 // Connect to the MongoDB database
 connect(URI, {
   useNewUrlParser: true,
@@ -25,7 +25,7 @@ connect(URI, {
     app.use('/questions', questionsRoute);
     app.use('/users', usersRoute);
 
-    app.listen(3000, () => {
+    app.listen(PORT, () => {
       console.log('Server started on port 3000');
     });
   })
